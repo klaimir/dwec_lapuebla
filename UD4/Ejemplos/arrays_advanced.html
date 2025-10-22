@@ -33,6 +33,15 @@
 
     console.log(personas2);
 
+    // Ejemplo de mutabilidad de objetos internos del array
+    /*
+    // La edad del elemento cambia en ambos array pq la celda apunta al mismo objeto
+    personas2[0].edad = 15;
+    // Sólo se elimina de persona pero no de personas2 pq es un array diferente
+    personas.pop();
+    console.log(personas);
+    */
+
     // Puede servir para eliminar elementos
     personas = personas.filter((element) => {
         return element.dni !== "77777771R";
@@ -46,7 +55,8 @@
     // No es la manera habitual
     const callback = (item => {
         return item.dni === dni;
-    })
+    });
+    //let indexDni = personas.findIndex(item => item.dni === dni);
     let indexDni = personas.findIndex(callback);
     if(indexDni === -1) {
         alert("No existe el DNI")
@@ -81,12 +91,14 @@
 
     // Sort
     personas.push({ dni: "77777774R", nombre: "Ale", apellidos: "Pérez", edad: 15 });
-    console.log(personas.sort((a, b) => a.edad - b.edad));
+    console.log(personas.sort((a, b) => b.edad - a.edad));
 
-    console.log(personas.sort((a, b) => a.nombre.localeCompare(b.nombre.localeCompare())));
+    // Ordenamiento de strings
+    //console.log(personas.sort((a, b) => a.nombre.localeCompare(b.nombre.localeCompare())));
 
     // Reduce
-    console.log(personas.reduce((sumEdad, item) => sumEdad + item.edad, 0) / personas.length);
+    let total = personas.reduce((sumEdad, item) => sumEdad + item.edad, 0);
+    console.log( total / personas.length);
 
     // Foreach (para visualizar)
     personas.forEach(element => {
