@@ -24,18 +24,33 @@
             this.eyeColor = eyecolor;
         }
 
-        name() {
+        // Setter
+        set age(age) {
+            if(age < 1 || age >= 120)
+                throw new Error("Edad incorrecta");
+
+            this._age = age;
+        }
+
+        // Getter
+        get name() {
             return this.firstName + " " + this.lastName;
         }
 
         cocinar() {
-            console.log(`La persona ${this.name()} cocina`)
+            console.log(`La persona ${this.name} cocina`)
         }
 
     }
 
     const myFather = new Person("John", "Doe", 50, "blue");
     const myMother = new Person("Sally", "Rally", 48, "green");
+
+    try {
+        myFather.age = -1;
+    } catch (error) {
+        console.log(error);
+    }    
 
     console.log(myFather);
     console.log(myMother);
@@ -50,7 +65,7 @@
         }
 
         sueldo() {
-            console.log(`La persona ${this.name()} tiene sueldo ${this.salary}`)
+            console.log(`La persona ${this.name} tiene sueldo ${this.salary}`)
         }
 
     }
