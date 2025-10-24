@@ -1,5 +1,5 @@
 {
-  "name": "patrones-solid-ts",
+  "name": "patrones-solid-ts-sin-patrones",
   "version": "1.0.0",
   "scripts": {
     "factory": "npx ts-node src/patterns/Factory.ts",
