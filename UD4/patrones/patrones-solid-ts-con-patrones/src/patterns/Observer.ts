@@ -2,7 +2,7 @@ interface Observador {
   actualizar(mensaje: string): void;
 }
 
-class Sujeto {
+class Canal {
   private observadores: Observador[] = [];
 
   suscribir(obs: Observador) {
@@ -23,7 +23,7 @@ class Usuario implements Observador {
   }
 }
 
-const canal = new Sujeto();
+const canal = new Canal();
 const ana = new Usuario("Ana");
 const luis = new Usuario("Luis");
 
