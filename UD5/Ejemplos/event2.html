@@ -23,11 +23,43 @@
 <script type="text/javascript">
     // Evento para hacer toggle del color del título
     const title = document.querySelector("#title");
-    
+    title.addEventListener('click', function () {
+        if (this.style.backgroundColor !== 'black') {
+            this.style.backgroundColor = 'black';
+            this.style.color = "white";
+        } else {
+            this.style.backgroundColor = 'white';
+            this.style.color = "black";
+        }
+    });
 
     // ¿Cómo procesamos el formulario?
-    // 1) Procesar errores
-    // 2) Si todo va ok, empaquetar los resultados en JSON
+    const formulario = document.querySelector("#formulario");
+    // A FUEGO :)
+    formulario.addEventListener('submit', function (event) {
+        event.preventDefault();
+        // Elementos del DOM
+        const nombre = document.querySelector('#nombre');
+        const apellidos = document.querySelector('#apellidos');
+        // 1) Procesar errores
+        let valido = true;
+        // 2) Si todo va ok, empaquetar los resultados en JSON
+        if (valido) {
+            const json = {
+                nombre: nombre.value,
+                apellidos: apellidos.value
+            }
+            console.log(json);
+        }
+    });
+
+    // Esto no, caca
+    /*
+    const submit = document.querySelector("#submit");
+    formulario.addEventListener('click', function () {
+        
+    });
+    */
 </script>
 
 </html>
