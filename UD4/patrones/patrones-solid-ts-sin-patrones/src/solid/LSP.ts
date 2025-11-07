@@ -5,6 +5,13 @@ class AveVoladora {
   }
 }
 
+class Flamenco extends AveVoladora {
+  volar() {
+    super.volar();
+    console.log("Soy un flamenco");
+  }
+}
+
 class Pinguino extends AveVoladora {
   volar() {
     throw new Error("🐧 Los pingüinos no vuelan");
@@ -12,9 +19,11 @@ class Pinguino extends AveVoladora {
 }
 
 const ave = new AveVoladora();
+const flamenco = new Flamenco();
 const pinguino = new Pinguino();
 
 ave.volar();
+flamenco.volar();
 try {
   pinguino.volar();
 } catch (e) {
