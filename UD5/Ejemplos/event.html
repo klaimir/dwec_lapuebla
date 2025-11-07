@@ -7,35 +7,25 @@
 </head>
 
 <body>
-    <h1 id="title">Eventos</h1>
-    <form id="formulario">
-        <p>
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre" value="Constantino" />
-            <label for="apellidos">Apellidos:</label>
-            <input type="text" name="apellidos" id="apellidos" value="Veiga Perez" />
-            <input id="submit" type="submit" value="Enviar">
-        </p>
-        Haga click en cada uno de los campos para ver más información.
-    </form>
+    <a href="pagina.html" id="mienlace" onClick="alertar(this)">Pulsa aquí</a>
+
+    Su equivalente en el <strong>modelo tradicional</strong> sería:
+    <a id="mienlace2" href="pagina2.html">Pulsa aqui</a>
+
 </body>
 
 <script type="text/javascript">
-    // Evento para hacer toggle del color del título
-    const title = document.querySelector("#title");
-    title.addEventListener('click', function () {
-        if (this.style.backgroundColor !== 'black') {
-            this.style.backgroundColor = 'black';
-            this.style.color = "white";
-        } else {
-            this.style.backgroundColor = 'white';
-            this.style.color = "black";
-        }
-    });
+    // Modelo en línea
+    function alertar(objeto) {
+        alert("Te conectaremos con la página: " + objeto.href);
+    }
 
-    // ¿Cómo procesamos el formulario?
-    // 1) Procesar errores
-    // 2) Si todo va ok, empaquetar los resultados en JSON
+    // Modelo de registro tradicional
+    document.getElementById("mienlace2").onclick = alertar2;
+
+    function alertar2() {
+        alert("Te conectaremos con la página: " + this.href);
+    }
 </script>
 
 </html>
