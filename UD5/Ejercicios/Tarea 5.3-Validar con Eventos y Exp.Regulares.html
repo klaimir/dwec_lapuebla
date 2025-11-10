@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Validación con HTML5</title>
+    <meta name="author" content="Ángel Berasuainr" />
+</head>
+
+<body>
+    <h1>Validar con Eventos y Expresiones Regulares</h1>
+    <div>
+        <form>
+            <legend>Introduce los datos y pulsa Comprobar</legend>
+            <br /><br />
+
+            <label for="dni">DNI:</label>
+            <input id="dni" type="text" name="dni" placeholder="00.000.000-A" title="Esto no parece un DNI válido" />
+
+            <br /><br />
+
+            <label for="nombre">Nombre:</label>
+            <input id="nombre" type="text" name="nombre" size="50" />
+
+            <br /><br />
+
+            <label for="fecha">Fecha de Nacimiento:</label>
+            <input id="fecha" type="date" name="fecha" />
+
+            <br /><br />
+
+            <label for="email">Email:</label>
+            <input id="email" type="text" name="text" size="40" placeholder="ejemplo@hola.com" />
+
+            <br /><br />
+
+            <label for="sitioweb">Página WEB:</label>
+            <input id="sitioweb" type="text" name="sitioweb" placeholder="https://www.ejemplo.com"
+                title="No coincide con el formato" />
+
+            <br /><br />
+
+            <label for="passwd">Contraseña:</label>
+            <input id="passwd" type="password" name="passwd" placeholder="De 8 a 10 caracteres"
+                tittle="Introduce una contraseña de entre 8 y 10 caracteres" />
+            <br /><br />
+
+            <button type="submit">Comprobar</button>
+        </form>
+    </div>
+
+    <br /><br />
+    <div id="error"></div>
+
+    <script type="text/javascript">
+    </script>
+</body>
+
+</html>
