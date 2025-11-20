@@ -4,4 +4,4 @@
 - Objetos Literales
 - Más conceptos sobre objetos
 - Prototipos
-- Clases, herencia, static, ámbito de atributos
+- Clases, herencia, static, ámbito de atributos (ES6)
