@@ -1,0 +1,22 @@
+<html>
+
+<head>
+   <title>Titulo DOM</title>
+   <meta charset="UTF-8">
+</head>
+
+<body>
+   <p title="Texto de un párrafo">Esto es un ejemplo de <b>texto HTML<br />
+         que puedes tener</b> en tu documento.</p>
+
+</body>
+
+<script type="text/javascript">
+   console.log(document.getElementsByTagName("p"));
+   console.log(document.getElementsByTagName("p")[0]);
+   console.log(document.getElementsByTagName("p")[0].childNodes[1]);
+   console.log(document.getElementsByTagName("p")[0].childNodes[1].childNodes[0]);
+   console.log(document.getElementsByTagName("p")[0].childNodes[1].childNodes[0].nodeValue);
+</script>
+
+</html>

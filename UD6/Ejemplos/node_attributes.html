@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Eventos</title>
+</head>
+
+<body>
+    <h1 id="title">Eventos</h1>
+    <form id="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" value="" />
+        <div id="error-nombre"></div>
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" name="apellidos" id="apellidos" value="Veiga Perez" />
+        <div id="error-apellidos"></div>
+        <button id="cambiarPassword" type="button">Cambiar password</button>
+        <button id="cambiarApellidos" type="button">Cambiar apellidos</button>
+    </form>
+</body>
+
+<script type="text/javascript">    
+    const formulario = document.querySelector("#formulario");
+    console.log(formulario);
+    const cambiarPassword = document.querySelector("#cambiarPassword");
+    const cambiarApellidos = document.querySelector("#cambiarApellidos");
+
+    // Manejadores de eventos
+    cambiarPassword.addEventListener("click", function () {
+        document.getElementById("apellidos").type="password";
+    });
+
+    cambiarApellidos.addEventListener("click", function () {
+        document.getElementById("apellidos").setAttribute('type','text');
+        document.getElementById("apellidos").setAttribute('value','Cid Blanco');
+    });   
+
+    // Mostramos elementos
+    const elementos = document.getElementsByTagName("input");
+    for (let index = 0; index < elementos.length; index++) {
+        const element = elementos[index];
+        console.log(element);
+        mostrarAtributos(element);
+    }
+
+    // Mostramos Atributos
+    function mostrarAtributos(element) {
+        for (var x = 0; x < element.attributes.length; x++) {
+            var atributo = element.attributes[x];
+            console.log(atributo.nodeName + " -> " + atributo.nodeValue);
+        }
+    }
+
+
+</script>
+
+</html>

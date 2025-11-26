@@ -1,0 +1,29 @@
+<html>
+ <head>
+ <title>Titulo DOM</title>
+ <meta charset="UTF-8">
+ </head>
+
+ <body>
+ <p>Párrafo DOM es uno</p>
+ <p>Párrafo DOM es dos</p>
+ <p>Párrafo DOM es tres</p>
+ <p>El último párrafo es el cuatro</p>
+
+ <script type="text/javascript">
+    // Muestra el número de párrafos del documento: 4 párrafos tipo p
+    var parrafos = document.getElementsByTagName("p");
+    console.log("El número de párrafos del documento es: "+parrafos.length);
+    // Muestra el valor nodo hijo 0 del párrafo 2: Párrafo DOM es tres
+    //console.log("El contenido del tercer párrafo es: "+ parrafos[2].childNodes[0].nodeValue);
+    console.log(parrafos[2].childNodes);
+     console.log("El contenido del tercer párrafo es: "+ parrafos[2].firstChild.nodeValue);
+     // Muestra el contenido del último párrafo
+     console.log("El contenido del último párrafo es: " + parrafos[3].firstChild.nodeValue);
+     // Modifica el valor del primer hijo del segundo párrafo con el texto indicado
+    parrafos[1].firstChild.nodeValue="El contenido del segundo párrafo se ha modificado";
+     // Modifica el valor del primer hijo del último párrafo con el texto indicado
+    parrafos[3].firstChild.nodeValue="El último párrafo es el FINAL";
+ </script>
+ </body>
+</html>
