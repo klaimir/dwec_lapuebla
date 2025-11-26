@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+</head>
+
+<body>
+    <form id="socioGym">
+        <div id="error-dni"></div>
+        <label for="dni">DNI:</label>
+        <input id="dni" type="text" name="dni" placeholder="00000000-A" title="Esto no parece un DNI válido"
+             />
+        <div id="respuesta"></div>
+        <div id="error-nombre"></div>
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" type="text" name="nombre" size="50" onblur="checkRequired(this)" />
+        <br />
+        <div id="error-apellidos"></div>
+        <label for="apellidos">Apellidos:</label>
+        <input id="apellidos" type="text" name="apellidos" size="50" onblur="checkRequired(this)" />
+        <br />
+        <div id="error-direccion"></div>
+        <label for="direccion">Direccion:</label>
+        <input type="text" id="direccion" name="direccion" onblur="checkRequired(this)" />
+        <br>
+        <div id="error-email"></div>
+        <label for="email">Email:</label>
+        <input id="email" type="text" name="email" size="40" placeholder="ejemplo@hola.com"
+            onblur="checkRequired(this)" />
+        <br>
+        <input type="radio" name="sexo" id="hombre" value="hombre">
+        <label for="hombre">Hombre</label>
+        <input type="radio" name="sexo" id="mujer" value="mujer">
+        <label for="mujer">Mujer</label>
+        <br>
+        <div id="error-telefono"></div>
+        <label for="telefono">Telefono:</label>
+        <input type="text" name="telefono" id="telefono" placeholder="(+11)-123456789" onblur="checkRequired(this)" />
+        <br>
+        <div id="error-alta"></div>
+        <label for="alta">Fecha de Alta:</label>
+        <input type="date" name="alta" id="alta" onblur="checkRequired(this)">
+        <br>
+        <div id="error-provincia"></div>
+        Provincia
+        <select name="provincia" id="provincia" onblur="checkRequired(this)">
+            <option value="1">Almeria</option>
+            <option value="2">Granada</option>
+            <option value="3">Sevilla</option>
+        </select>
+        <br>
+        <div id="error-alta"></div>
+        <label for="alta">Fecha de nacimiento:</label>
+        <input type="date" name="nacimiento" id="nacimiento" onblur="checkRequired(this)">
+        <br>
+        <div id="error-edad"></div>
+        <label for="edad">Edad:</label>
+        <input type="text" id="edad" name="edad" disabled/>
+        <br>
+        <div id="error-deporte"></div>
+        Deportes 
+        <select name="deporte" id="deporte" onblur="checkRequired(this)">
+            <option value="">-Deporte-</option>
+            
+        </select>
+        <br>
+        <input type="submit" value="Grabar"  /> 
+        <button type="button" value="limpiar" onclick="limpiarFormulario()">Limpiar</button>
+        <button type="button" id="socios" value="socios">Socios Inscritos</button>
+        <button type="button" id="deportes" value="deportes">Socios por Deporte</button>
+        <button type="button" id="estadistica" value="estadistica">Estadísticas</button>
+    </form>
+</body>
+<script src="Gimnasio.js"></script>
+<script src="Validaciones.js"></script>
+<script src="Funciones.js"></script>
+<script src="Main.js"></script>
+</html>
