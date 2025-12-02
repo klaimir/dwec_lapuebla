@@ -22,7 +22,8 @@
       var nuevoParrafo = document.createElement('p');
       var nuevoTexto = document.createTextNode('Contenido añadido al párrafo.');
       nuevoParrafo.appendChild(nuevoTexto);
-      document.getElementById('parrafito').appendChild(nuevoParrafo);
+      //document.getElementById('parrafito').appendChild(nuevoParrafo);
+      document.querySelector('body').appendChild(nuevoParrafo);
    });
 
    addP2.addEventListener("click", function () {
