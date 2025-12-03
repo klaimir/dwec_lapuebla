@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Eventos</title>
+</head>
+
+<body>
+    <h1 id="title">Eventos</h1>
+    <form name="formulario" id="formulario">
+
+        <label for="nombre">
+            Nombre:
+        </label>
+
+        <input type="text" id="nombre" name="nombre" />
+
+        <label for="apellidos">
+            Apellidos:
+        </label>
+
+        <input type="text" id="apellidos" name="apellidos" />
+
+        <label for="provincia">
+            Provincia:
+        </label>
+
+        <input type="text" id="provincia" name="provincia" />
+
+        <input type="button" id="enviar" value="Enviar" />
+    </form>
+
+</body>
+
+<script>
+
+    function cambiar(evt) {
+        console.log('CurrentTarget: ', evt.currentTarget);
+        console.log('Target: ', evt.target);
+        if (evt.keyCode == 13)  // Código de la tecla Enter
+            // El operador ? va evaluando atributos si estos existen en el
+            // objeto que ese está evaluando
+            if (this.nextElementSibling?.nextElementSibling?.type == "text")
+                this.nextElementSibling.nextElementSibling.focus();
+    }
+
+    const inputs = document.getElementsByTagName("input");
+
+    for (i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener("keypress", cambiar, false);
+    }
+
+    // Ejemplos de burbujeos
+    formulario.addEventListener("click", function (event) {
+        console.log('Click en formulario', event);
+    }, false);
+
+    nombre.addEventListener("click", function (event) {
+        console.log('Click en nombre', event);
+        event.stopPropagation();
+    }, false);
+
+</script>
+
+</html>
