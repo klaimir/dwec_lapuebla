@@ -191,29 +191,35 @@
             var txt = document.createTextNode("\u00D7");
             span.className = "close";
             span.appendChild(txt);
+
+            // Deberíamos borrarlos del DOM no ocultarlos
+            span.onclick = function () {
+                var div = this.parentElement;
+                // También podría haber puesto:
+                this.parentElement.parentElement.removeChild(div);
+                //list.removeChild(div);
+            }
+
             li.appendChild(span);
 
+            // Vuelve a añadir evento a todos los close
+            /*
             for (i = 0; i < close.length; i++) {
                 close[i].onclick = function () {
                     var div = this.parentElement;
                     div.style.display = "none";
                 }
             }
+            */
 
-            // Deberíamos borrarlos del DOM no ocultarlos
-            span.onclick = function () {
-                var div = this.parentElement;
-                // También podría haber puesto:
-                // this.parentElement.parentElement.removeChild(div);
-                list.removeChild(div);
-            }
-
+            // Vuelve a añadir evento pero solo al close del elemento actual
             /*
             span.onclick = function () {
                 var div = this.parentElement;
                 div.style.display = "none";
             }
-                */
+            */           
+                     
         }
     </script>
 
