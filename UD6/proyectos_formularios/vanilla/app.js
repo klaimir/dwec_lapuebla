@@ -56,15 +56,17 @@ campos.forEach(id => {
 // Manejo de eventos para validar formulario
 document.getElementById('formulario').addEventListener('submit', e => {
   e.preventDefault();
-  // Validaciones 
+  // Validaciones
+  let validForm = true;
   for (const c of campos) {
-    if (!validateField(c)) return;
+    if (!validateField(c)) validForm = false;
   }
   // Empaquetamiento genérico de resultados
-  const data = {};
-  campos.forEach(c => data[c] = getValue(c));
-  console.log(JSON.stringify(data, null, 2));
-  alert('Enviado: ' + JSON.stringify(data));
-  // A partir de aquí hacemos lo que queramos con los datos...
-
+  if (validForm) {
+    const data = {};
+    campos.forEach(c => data[c] = getValue(c));
+    console.log(JSON.stringify(data, null, 2));
+    alert('Enviado: ' + JSON.stringify(data));
+    // A partir de aquí hacemos lo que queramos con los datos...
+  }
 });
