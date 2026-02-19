@@ -1,0 +1,27 @@
+<script setup>
+import { ref, reactive } from 'vue'
+const contador = ref(0)
+const usuario = reactive({ nombre: 'Alumno', edad: 20 })
+
+function incrementarEdad() {
+    usuario.edad++;
+}
+
+// Conceptos clave:
+/* 
+1) Manejo de eventos
+2) Reactividad (interpolation)
+3) Concepto de estado del componente
+4) Composición interna de componentes
+*/
+</script>
+<template>
+  <h2>1. Reactividad (ref vs reactive)</h2>
+  <div class="caja">
+    <p>Contador (ref): {{ contador }}</p>
+    <button @click="contador++">Sumar</button>
+    <hr>
+    <p>Usuario (reactive): {{ usuario.nombre }} - {{ usuario.edad }} años</p>
+    <button @click="incrementarEdad">Cumplir año</button>
+  </div>
+</template>
