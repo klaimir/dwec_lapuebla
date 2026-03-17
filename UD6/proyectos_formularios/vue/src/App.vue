@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="enviar">
-    <div><label>Nombre</label><input v-model="form.nombre"/><p>{{errores.nombre}}</p></div>
+    <div><label>Nombre</label><input @blur="validar('nombre')" v-model="form.nombre"/><p>{{errores.nombre}}</p></div>
     <div><label>DNI</label><input v-model="form.dni"/><p>{{errores.dni}}</p></div>
     <div><label>Email</label><input v-model="form.email"/><p>{{errores.email}}</p></div>
     <div>
